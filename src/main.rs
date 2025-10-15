@@ -51,7 +51,7 @@ fn main() -> std::io::Result<()> {
     let mut staffmember : StaffMember = StaffMember::create(&texture_creator, &mut current_texture);
 
     let ttf_context = sdl2::ttf::init().map_err(|e| e.to_string()).unwrap();
-    let mut font = ttf_context.load_font("./JetBrainsMono-Regular.ttf", 128).unwrap();
+    let mut font = ttf_context.load_font("./assets/JetBrainsMono-Regular.ttf", 128).unwrap();
 
     let mut event_pump = sdl_context.event_pump().unwrap();
     'running: loop {
