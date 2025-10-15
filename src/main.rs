@@ -41,10 +41,11 @@ fn main() -> std::io::Result<()> {
 
     let mut canvas = window.into_canvas().build().unwrap();
     let texture_creator = canvas.texture_creator();
-    let mut current_texture = texture_creator.load_texture("./tmp/dem.jpg").expect("Error initiating texture");
+    let mut current_texture = texture_creator.load_texture("./assets/default.png").expect("Error initiating texture");
 
-    canvas.set_draw_color(Color::RGB(0, 255, 255));
+    canvas.set_draw_color(Color::RGB(255, 255, 255));
     canvas.clear();
+    canvas.copy(&current_texture, None, None);
     canvas.present();
 
     let mut staffmember : StaffMember = StaffMember::create(&texture_creator, &mut current_texture);
